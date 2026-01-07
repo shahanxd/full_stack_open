@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant Browser
+    participant Server
+
+    (user adds new note)
+    Browser->>Server: POST /new_note (note data)
+    Server->>Server: save note to db
+    Server->>Browser: redirect to /notes after updating
+    Browser->>Server: GET /notes (reloads, fetches new js code)
+    Server->>Browser: HTML page with updated notes
+    Browser->>User: render updated page

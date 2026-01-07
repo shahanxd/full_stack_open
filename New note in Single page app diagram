@@ -1,0 +1,8 @@
+sequenceDiagram
+    participant User
+    participant Server
+
+    Browser->>Server: POST /new_note_spa (note data as JSON)
+    Server->>Server: saves note to db
+    Server-->>Browser: 201 Created (saved note as JSON)
+    Browser->>Browser: Update UI with new note

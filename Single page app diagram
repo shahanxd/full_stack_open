@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant Browser
+    participant Server
+
+    Browser->>Server: GET /spa
+    Server-->>Browser: HTML doc
+    Browser->>Server: GET /main.css
+    Server-->>Browser: CSS file
+    Browser->>Server: GET /spa.js
+    Server-->>Browser: JS file
+    Browser->>Server: GET /data.json
+    Server-->>Browser: notes data
